@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+// 100以内的奇数
+        // var sum = 0;
+        // var i = 1;
+        // for(i = 1;i <= 100;i++){
+        //     if(i %2 != 0){
+        //         // console.log(i);
+        //         sum += i;
+        //     }
+        // }
+        // console.log(sum);
+
+// 三位数的水仙花数
+        // for(var i = 100;i < 1000;i++){
+        //     var bai = parseInt(i/100);
+        //     // console.log(bai);
+        //     var shi = parseInt((i - bai * 100) / 10);
+        //     // console.log(shi);
+        //     var ge = i % 10;
+        //     // console.log(ge);
+
+        //     if(bai*bai*bai + shi*shi*shi + ge*ge*ge == i){
+        //         console.log(i);
+        //     }
+        // }
+
+// 判断质数
+            var num = prompt("请输入一个大于1的数：");
+            if(num <= 1){
+                alert("该值不合法！");
+            }else{
+
+                var flag = true ;
+                for(var i = 2;i < num;i++){
+                    // console.log(i);
+                    // 判断num是否能被i整除
+                    if(num % i == 0){
+                        flag = false;
+                    }
+            }
+            if(flag){
+                alert(num + "是质数");
+            }else{
+                alert(num + "不是质数");
+            }
+            }
+            
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
