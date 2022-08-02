@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+// 定义判断数字是否为偶数的函数
+        // function isO(num){
+        //     return num %2 == 0;
+        // }
+        // var result = isO(43);
+        // console.log("偶数");
+// 创建一个函数可以在控制台中输出一个人的信息
+            function sayHello(name,age){
+                console.log("我是" + name + ",今年" + age);
+            }
+            sayHello("syk",18);
+
+            
+            function sayHi(obj){
+                console.log("我是"+obj.name + ",今年" + obj.age);
+            }
+            var obj = {
+                    name:"syk",
+                    age:18,
+            }
+            sayHi(obj);
+
+
+            function fun(a){
+                // console.log(a);
+                a(obj);
+            }
+
+            fun(sayHi);
+    </script>
+
+</head>
+<body>
+    
+</body>
+<html>
+
