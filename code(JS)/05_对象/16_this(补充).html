@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        // 使用函数声明形式创建的函数函数声明提前
-        fun();
+        
+        var name = "全局";
+
         function fun(){
-            console.log("ok");
+            console.log(this.name);
         }
 
-        // 使用函数表达式创建的函数不能在创建前调用
-        fun2();
-        var fun2 = function(){
-            console.log("test");
-        }
-        
+        var obj = {
+            name:"swk",
+            sayName:fun
+        };
+        var obj2 = {
+            name:"shs",
+            sayName:fun
+        };
+
+        fun();
+        obj2.sayName();
     </script>
 </head>
 <body>

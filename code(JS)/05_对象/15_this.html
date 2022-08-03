@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function fun(){
+            console.log(this.name);
+        }
+        
+        var obj = {
+            name:"swk",
+            sayName:fun
+        };
+
+        obj.sayName();      //以方法的形式调用，this表示的是对象的属性，obj.name=="swk"
+
+        name = "全局的name属性";
+        fun();  //以函数形式调用，this表示的是window的属性，window.name="全局的name属性"
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
