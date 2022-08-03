@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var d = new Date();
+
+        console.log(d);
+
+        // 创建一个指定的时间对象
+        // 日期格式：月份/日/年 时:分:秒
+        var d2 = new Date("03/04/2004 3:04:04");
+        console.log(d2);
+
+        // 返回日
+        var date = d2.getDate();
+        console.log(date);
+
+        // 返回周几 0周日 1周一
+        var date1 = d2.getDay();
+        console.log(date1);
+
+        // 返回月份 0代表1月 1代表2月
+        var date2 = d2.getMonth();
+        console.log(date2);
+
+        // getTime()
+        // 获取当前日期对象的时间戳
+        var time = d2.getTime();
+        console.log(time);
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
