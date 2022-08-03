@@ -10,12 +10,25 @@
         function Person(name,age){
             this.name = name;
             this.age = age;
+
+            // 向对象中添加一个方法
+            // this.sayName = fun;
         }
+
+        // 将sayName方法在全局作用域中定义
+        // 将函数定义在全局作用域中，污染了全局作用域的命名空间
+        // 而且定义在全局作用域中也很不安全
+        // function fun(){
+        //     console.log("Hello大家好，我是" + this.name);
+        // }
+
+        // 原型对象
+        Person.prototype.sayName = function(){
+            console.log("Hello大家好，我是" + this.name);
+        };
         var obj = new Person("swk",18);
-
-        console.log(obj);
-
-        console.log(obj instanceof Person);
+        obj.sayName();
+        // console.log(obj instanceof Person);
     </script>
 </head>
 <body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        var per1 = new Person("swk",18);
+        var per2 = new Person("shs",20);
+        var per3 = new Person("ts",34);
+        var per4 = new Person("zbj",45);
+        var per5 = new Person("hhe",14);
+
+        var perArr = [per1,per2,per3,per4,per5];
+
+        function getAdult(arr){
+            var newArr = [];
+            for(var i = 0;i < arr.length;i++){
+                if(arr[i].age >= 18){
+                    newArr.push(arr[i]);
+                }
+            }
+
+            return newArr;
+        }
+
+        console.log(getAdult(perArr));
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+

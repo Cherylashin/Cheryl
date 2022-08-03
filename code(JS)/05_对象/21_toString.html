@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        var per = new Person("swk",18);
+
+        console.log(per);
+        console.log(per.toString());
+
+        // 谷歌浏览器默认console.log(per);输出就是Person {name: 'swk', age: 18}
+        // console.log(per.toString());输出的是[object Object]
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+

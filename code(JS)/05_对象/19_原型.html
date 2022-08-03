@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Person(){
+
+        }
+
+        function MyClass(){
+
+        }
+
+        var mc = new MyClass();
+        // console.log(MyClass.prototype == mc.__proto__);
+
+        MyClass.prototype.a = 123;
+        console.log(mc.a);
+
+        MyClass.prototype.say = function(){
+            console.log("Hello");
+        };
+        mc.say();
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
