@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- <button id="btn" onclick="console.log('你点我干嘛');">我是一个按钮</button> -->
+    <button id="btn">我是一个按钮</button>
+    <script type="text/javascript">
+    // 获取按钮对象
+    var btn = document.getElementById("btn");
+    // 像这种为单击事件绑定的函数，我们称为点击响应函数
+    btn.onclick = function(){
+        console.log("点击");
+    }
+    </script>
+</body>
+</html>

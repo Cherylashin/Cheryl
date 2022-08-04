@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 检查.
+        var reg = /\./;
+        var reg = new RegExp("\\.");
+
+        // 检查\
+        var reg = /\\/;
+        var reg = new RegExp("\\\\");
+
+        console.log(reg.test("dwd\\re"));
+
+        // \w 任意字母、数字
+        var reg1 = /\w/;
+        console.log(reg1.test("##"));
+
+        var reg2 = /\bchild\b/;
+        console.log(reg2.test("hello children"));
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
