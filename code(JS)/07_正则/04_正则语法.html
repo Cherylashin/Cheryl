@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 检查是否含有aaa
+        var reg = /a{3}/;
+        var reg1 = /a{1,3}/;
+        var reg2 = /a{2,}/;
+        var reg3 = /ab+c/;
+        var reg4 = /ab?c/;
+        var reg5 = /^a/;
+        var reg6 = /a$/;
+        var reg7 = /^a$/;
+        console.log(reg7.test("aca"));
+
+        // 检查一个字符串是否是一个合法手机号
+        var phoneStr = "19982053290";
+        var phoneReg = /^1[3-9][0-9]{9}$/;
+        console.log(phoneReg.test(phoneStr));
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+

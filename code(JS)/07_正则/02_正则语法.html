@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var reg = /a|b/i;
+        var reg1 = /[ab]/;   //相当于var reg = /a|b/i;
+
+        var str = "ahbiy";
+        console.log(reg.test(str));
+
+        // 检查一个字符串中是否有字母
+        var reg3 = /[a-z]/;
+        var str1 = "12356%$*(";
+        console.log(reg3.test(str1));
+
+        // 检查一个字符串中是否含有某一种字符串abc,adc,aec
+        var reg4 = /a[bde]c/;
+        var str2 = "adcysiwo";
+        console.log(reg4.test(str2));
+
+        // 除了
+        var reg5 = /[^ab]/;
+        var str3 = "abc";
+        console.log(reg5.test(str3));
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+<html>
+
