@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer{
+            width: 500px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: aquamarine;
+
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var img = document.getElementsByTagName("img")[0];
+            
+            // 创建一个数组用来保存图片的路径
+            var imgArr = ["./img/1.jpg","./img/2.jpg","./img/3.jpg","./img/4.jpg","./img/5.jpg"];
+            
+            // 创建一个变量来保存对当前正在显示的图片的索引
+            var index = 0;
+
+            var info = document.getElementById("info");
+            info.innerHTML = "一共"+ imgArr.length +"张图片，当前第"+ (index+1) + "张";
+
+            var prev = document.getElementById("prev");
+            prev.onclick = function(){
+                // alert("上一张");
+                index--;
+                if(index < 0){
+                    index = imgArr.length-1;
+                }
+                img.src = imgArr[index];
+                info.innerHTML = "一共"+ imgArr.length +"张图片，当前第"+ (index+1) + "张";
+            };
+
+            var next = document.getElementById("next");
+            next.onclick = function(){
+                // alert("下一张");
+                index++;
+                if(index > imgArr.length-1){
+                    index = 0;
+                }
+                img.src = imgArr[index];
+
+                info.innerHTML = "一共"+ imgArr.length +"张图片，当前第"+ (index+1) + "张";
+            };
+
+            
+            
+
+        };
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p id="info"></p>
+        <img src="./img/1.jpg" alt="冰棍" />
+        <button id="prev"><上一张</button>
+        <button id="next">下一张></button>
+    </div>
+</body>
+<html>
+
