@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 获取body标签
+            // var body = document.getElementsByTagName("body")[0];
+            // 在document中有一个属性body，它保存的是body的引用
+            var body = document.body;
+
+            // document.documentElement保存的是html根标签
+            var de = document.documentElement;
+
+            // document.all保存的是页面中所有元素
+            var all = document.all;
+            // all = document.getElementsByTagName("*");
+
+            // 根据class属性值获取值
+            var box1 = document.getElementsByClassName("box1");
+
+            // document.querySelector()
+            // 需要一个选择器的字符串作为参数，可以根据一个CSS选择器来查询一个元素节点对象
+            // 使用该方法总会返回唯一的元素
+            var div = document.querySelector(".box1 div");
+            console.log(div.innerHTML);
+
+            // 
+            var div1 = document.querySelectorAll(".box1 div");
+            console.log(div1[1].innerHTML);
+        };
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div>查询成功</div>
+        <div>ok？</div>
+    </div>
+    <div></div>
+</body>
+</html>
