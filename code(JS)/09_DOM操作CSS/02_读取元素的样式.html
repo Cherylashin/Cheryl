@@ -29,8 +29,20 @@
 
                 // 定义一个函数，用来获取指定元素的当前的样式
                 // 参数：1.obj 要获取样式的元素 2.name 要获取的样式名
-                function getStyle(obj){
-                    getComputedStyle(obj,null)[name];
+                function getStyle(obj,name){
+
+                    // 加window表示getComputedStyle是一个属性，不加是变量
+                    // 变量如果寻找不到会报错，属性寻找不到会返回false
+                    if(window.getComputedStyle){
+                        // 正常浏览器
+                        return getComputedStyle(obj,null)[name];
+                    }else{
+                        // IE8
+                        return obj.currentStyle[name];
+                    }
+                    
+
+                    
                 }
             };
         };
