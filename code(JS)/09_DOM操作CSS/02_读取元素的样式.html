@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 点击按钮以后读取box1的样式
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+            // 获取元素当前的样式
+                // 1.currentStyle只兼容IE
+                // alert(box1.currentStyle.width);
+                // 2.其他浏览器中可以使用getComputedStyle()，是window的方法可以直接使用
+                // 需要两个参数：1.要获取样式的元素2.可以传递一个伪元素，一般都传null
+                // var obj = getComputedStyle(box1,null);
+                // alert(obj.backgroundColor);
+
+
+                // 定义一个函数，用来获取指定元素的当前的样式
+                // 参数：1.obj 要获取样式的元素 2.name 要获取的样式名
+                function getStyle(obj){
+                    getComputedStyle(obj,null)[name];
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点我一下</button>
+    <br /><br />
+    <div id="box1"></div>
+</body>
+</html>
