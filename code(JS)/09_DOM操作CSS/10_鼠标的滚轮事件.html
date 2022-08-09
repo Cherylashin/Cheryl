@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // 当鼠标滚轮向下滚动时，box1变长
+            // 当鼠标滚轮向上滚动时，box1变短
+            var box1 = document.getElementById("box1");
+
+            // 为box1绑定一个鼠标滚轮滚动的事件
+            box1.onwheel = function(event){
+                if(event.deltaY < 0){
+                    // alert("向上滚");
+                    // 向上滚box1变短
+                    box1.style.height  = box1.clientHeight - 10 + "px";
+                }else{
+                    // alert("向下滚");
+                    box1.style.height  = box1.clientHeight + 10 + "px";
+                }
+
+                // 当滚轮滚动时，如果浏览器有滚动条，滚动条会随之滚动
+                // 这是浏览器的默认行为，如果不希望发生，就return false
+                // 或者最好采用event.preventDefault();
+                // return false;
+                event.preventDefault();
+                
+            };
+        };
+    </script>
+</head>
+<body style="height: 1000px;">
+    <div id="box1"></div>
+</body>
+</html>

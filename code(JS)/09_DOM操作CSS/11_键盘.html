@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // document.onkeydown = function(event){
+                
+            //     console.log(event.key);
+            //     // console.log(event.keyCode);
+                
+            // };
+            // document.onkeydup = function(){
+            //     console.log("按键被松开了");
+            // };
+
+            var input = document.getElementsByTagName("input")[0];
+            input.onkeydown = function(event){
+                // console.log(event.key);
+
+                // 使文本框中不能输入数字
+                if(event.key >= 0 && event.key <= 9){
+                    return false;
+                }
+
+
+                // return false;
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="">
+</body>
+</html>
