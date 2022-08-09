@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 200px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var btn01 = document.getElementById("btn01");
+            var btn02 = document.getElementById("btn02");
+
+            // box1向右移
+            btn01.onclick = function () {
+                move(box1,800,10);
+            };
+
+            // box1向左移
+            btn02.onclick = function () {
+                move(box1,0,10);
+            };
+
+
+            var btn03 = document.getElementById("btn03");
+            var btn04 = document.getElementById("btn04");
+
+            // box2向右移
+            btn03.onclick = function () {
+                move(box2,800,10);
+            };
+
+            // box2向左移
+            btn04.onclick = function () {
+                move(box2,0,10);
+            };
+
+            var btn05 = document.getElementById("btn05");
+            btn05.onclick = function () {
+                move(box2,800,10);
+            };
+        };
+
+
+        // 创建一个可以执行简单动画的函数
+        // obj 要执行动画的对象
+        // target 执行动画的目标位置
+        // speed 移动的速度
+        var timer;
+        function move(obj,target,speed) {
+
+            clearInterval(timer);
+            // 当前位置
+            var current = parseInt(getStyle(obj, "left"));
+
+            if(current > target){
+                speed = -speed;
+            }
+
+            // 向执行动画的对象中添加一个timer属性，用来保存它自己的定时器标识
+            obj.timer = setInterval(function () {
+                var oldValue = parseInt(getStyle(obj, "left"));
+
+                var newValue = oldValue + speed;
+
+                obj.style.left = newValue + "px";
+
+                if ((speed < 0 && newValue < target) || (speed > 0 && newValue > target)) {
+                    newValue = target;
+                }
+
+                if (newValue === target) {
+                    clearInterval(obj.timer);
+                }
+            }, 30);
+        }
+
+
+
+        function getStyle(obj, name) {
+
+            // 加window表示getComputedStyle是一个属性，不加是变量
+            // 变量如果寻找不到会报错，属性寻找不到会返回false
+            if (window.getComputedStyle) {
+                // 正常浏览器
+                return getComputedStyle(obj, null)[name];
+            } else {
+                // IE8
+                return obj.currentStyle[name];
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1向左移动</button>
+
+    <button id="btn03">点击按钮以后box2向右移动</button>
+    <button id="btn04">点击按钮以后box2向左移动</button>
+
+    <button id="btn05">测试按钮</button>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>

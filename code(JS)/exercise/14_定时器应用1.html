@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var timer;
+            btn01.onclick = function(){
+                // 点击按钮以后使box1向右移动
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    var oldValue = parseInt(getStyle(box1,"left"));
+
+                    var newValue = oldValue +11;
+
+                    box1.style.left = newValue + "px";
+
+                    if(newValue > 800){
+                        newValue = 800;
+                    }
+
+                    if(newValue === 800){
+                        clearInterval(timer);
+                    }
+                },30);
+            };
+        };
+
+        function getStyle(obj,name){
+
+        // 加window表示getComputedStyle是一个属性，不加是变量
+        // 变量如果寻找不到会报错，属性寻找不到会返回false
+        if(window.getComputedStyle){
+            // 正常浏览器
+            return getComputedStyle(obj,null)[name];
+        }else{
+            // IE8
+            return obj.currentStyle[name];
+        }
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <br><br>
+    <div id="box1"></div>
+</body>
+</html>

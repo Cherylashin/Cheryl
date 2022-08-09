@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn01 = document.getElementById("btn01");
+            
+            var timer;
+            
+            btn01.onclick = function(){
+
+                // 目前我们每点击一次按钮就会开启一个定时器，
+                // 点击多次就会开启多个定时器，这就导致图片切换速度过快
+                // 在开启定时器之前需要将上一个定时器关闭
+                clearInterval(timer);
+                var img1 = document.getElementById("img1");
+
+                var imgArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+                var  index = 0;
+                timer = setInterval(function(){
+                    index++;
+                    if(index >= imgArr.length){
+                        index=0;
+                    }
+                    img1.src = imgArr[index];
+                },500);
+            };
+
+           var btn02 = document.getElementById("btn02");
+           btn02.onclick = function(){
+            clearInterval(timer);
+           };
+
+        };
+    </script>
+</head>
+<body>
+    <img id="img1" src="img/1.jpg" alt="">
+    <br><br>
+    <button id="btn01">开始</button>
+    <br><br>
+    <button id="btn02">停止</button>
+</body>
+</html>
