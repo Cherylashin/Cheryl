@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var obj = {name:'TOM'};
-        var a = obj;
-        console.log(typeof a);
+        var a = 3;
+        function fn(a){
+            a = a+1;
+        }
+        fn(a);
+        console.log(a);     //3
     </script>
 </head>
 <body>

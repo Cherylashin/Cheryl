@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var obj = {name:'TOM'};
-        var a = obj;
-        console.log(typeof a);
+        var obj = {};
+        obj = null;
+
+        function fn(){
+            var b = {};
+        }
+
+        fn();//b是自动释放，b所指向的对象是在后面的某个时刻由垃圾回收器回收
     </script>
 </head>
 <body>
