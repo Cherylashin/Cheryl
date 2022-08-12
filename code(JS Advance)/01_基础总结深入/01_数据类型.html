@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a;
+        console.log(typeof a==='undefined');
+        console.log(a===undefined);
+
+        a = 3;
+        console.log(typeof a==='number');
+        a = 'asw';
+        console.log(typeof a==='string');
+        a = true;
+        console.log(typeof a==='boolean');
+        a = null;
+        console.log(typeof a,a===null);
+
+        console.log('-------------------');
+
+        var b1 = {
+            b2: [1,'abc',console.log],
+            b3: function(){
+                console.log('b3');
+                return function(){
+                    return '4399';
+                }
+            }
+        };
+
+        console.log(b1 instanceof Object);
+        console.log(b1.b2 instanceof Array);
+        console.log(b1.b3 instanceof Function);
+
+        console.log(typeof b1.b3 ==='function');
+
+        console.log( typeof b1.b2[2]==='function');
+
+        b1.b2[2](4399);
+        console.log(b1.b3()());
+
+        console.log('-------------------');
+        console.log(b1.b3);
+	    console.log(b1.b3());
+	    console.log(b1.b3()());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
