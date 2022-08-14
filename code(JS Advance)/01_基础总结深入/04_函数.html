@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showInfo(age){
+            if(age < 18){
+                console.log('未成年');
+            }else if(age > 60){
+                console.log('算了');
+            }else{
+                console.log('刚好');
+            }
+        }
+
+        showInfo(16);
+        showInfo(34);
+        showInfo(66);
+
+        var obj = {};
+        function test(){
+            this.xxx = 'aaa';
+        }
+        test.call(obj);
+        console.log(obj.xxx);
+    </script>
+</body>
+</html>
