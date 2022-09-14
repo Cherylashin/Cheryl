@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显式原型与隐式原型</title>
+</head>
+<body>
+    <script>
+        // 定义构造函数
+        function Fn(){  //内部语句：this.prototype = {};
+
+        }
+
+        console.log(Fn.prototype);
+
+        // 创建实例对象
+        var fn = new Fn();  //内部语句：this.__proto__ = Fn.prototype;
+        console.log(fn.__proto__);
+
+        console.log(Fn.prototype === fn.__proto__);
+
+        // 给原型添加方法
+        Fn.prototype.test = function(){
+            console.log('test');
+        };
+
+        // 调用
+        fn.test();
+    </script>
+</body>
+</html>

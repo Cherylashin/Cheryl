@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(Date.prototype);
+
+        function Fun(){
+
+        }
+        
+        console.log(Fun.prototype);
+
+        console.log(Date.prototype.constructor === Date);
+        console.log(Fun.prototype.constructor === Fun);
+
+        // 给原型对象添加属性（一般是方法）===>实例对象可以访问
+        Fun.prototype.test = function(){
+            console.log('test()');
+        };
+
+        // 创建一个实例对象fun
+        var fun = new Fun();
+        // fun可以调用原型对象的test方法
+        fun.test();
+    </script>
+</body>
+</html>
