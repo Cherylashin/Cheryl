@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s1 = new Set();
+        console.log(s1.size);   //0,空Set数据结构
+
+        const s2 = new Set(['a','b','c']);
+        console.log(s2.size);   //3
+
+        const s3 = new Set(['a','b','a','b']);
+        console.log(s3.size);   //2,已去重
+
+        const ary = [...s3];
+        console.log(ary);   //['a','b']
+
+        // 向Set结构中添加至使用add方法，可以链式调用
+        const s = new Set();
+        s.add(1).add(2).add(3)
+        console.log(s);   //{1,2,3}
+
+        // 向数组末尾添加元素使用push
+        const a = [];
+        a.push(1);
+        a.push(2);
+        console.log(a); //[1,2]
+
+        const r = s.delete(1);
+        console.log(s); //{2,3}
+        console.log(r); //true
+
+        const r2 = s.has(2);
+        console.log(r2);    //true
+
+        s.clear();
+        console.log(s.size);    //0,清空成功
+
+        const s5 = new Set(['a','b','c','d']);
+        s5.forEach(value => {
+            console.log(value);
+        })
+    </script>
+</body>
+</html>
