@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const fn = () => {
+        //     console.log(123);
+        // }
+
+        // fn();   //123
+
+        const obj = {name:'zhangsan'};
+        function fn(){
+            console.log(this);
+            return ()=>{
+                console.log(this);
+            }
+        }
+
+        const resFn = fn.call(obj); //将函数内部的this指向obj
+        resFn();    //{name: 'zhangsan'} {name: 'zhangsan'}
+    </script>
+</body>
+</html>

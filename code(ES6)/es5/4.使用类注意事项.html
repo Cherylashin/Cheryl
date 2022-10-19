@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        var that;
+        var _that;
+
+        class Star {
+            constructor(uname,age){
+                // constructor里面的this指向的是 创建的实例对象
+                console.log(this);  //Star{}
+
+                that = this;
+                this.uname = uname;
+                this.age = age;
+
+                // btn属于对象ldh，所以要用this.btn
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+
+            }
+            sing(){
+                // 这个sing方法里面的this 指向的是btn这个按钮，因为这个按钮调用了这个函数
+                console.log(this);  //<button>点击</button>
+                console.log(that.uname);    //this指向的是btn，但是btn中没有uname属性
+                // 更换为全局变量that(前面有使that=this)
+            }
+            dance(){
+                // 这个dance里面的this 指向的是实例对象ldh，因为ldh调用了这个函数
+                _that = this;
+                console.log(this);
+            }
+        }
+
+        var ldh = new Star('刘德华');
+        console.log(that === ldh);  //true
+
+        ldh.dance();
+        console.log(that === ldh);  //true
+    </script>
+</body>
+</html>
