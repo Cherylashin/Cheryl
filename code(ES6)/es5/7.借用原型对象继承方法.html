@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,age){
+            // this指向父构造函数的对象实例
+            this.uanme = uname;
+            this.age = age;
+        }
+        // 父构造函数原型上的方法
+        Father.prototype.money = function(){
+            console.log('挣钱');
+        }
+
+        function Son(uname,age,score){
+            // this指向子构造函数的对象实例
+            Father.call(this,uname,age);    //这里的this指向的是子构造函数
+            this.score = score;
+        }
+
+        // 子构造函数想要继承父构造函数原型上的方法
+        // 先new一个实例对象，根据实例对象->__proto__->Father()的prototype
+        // 可以访问到父构造函数上的方法
+        Son.prototype = new Father();
+
+        // 如果利用对象的形式修改了原型对象，
+        // 要利用constructor指回原来的构造函数
+        Son.prototype.constructor = Son;
+
+        // 子构造函数原型上的特有方法
+        Son.prototype.exam = function(){
+            console.log('考试');
+        }
+
+        console.log(Father.prototype);
+        console.log(Son.prototype.constructor);
+        
+    </script>
+</body>
+</html>

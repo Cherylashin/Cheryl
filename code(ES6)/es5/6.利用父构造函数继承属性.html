@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,age){
+            // this指向父构造函数的对象实例
+            this.uanme = uname;
+            this.age = age;
+        }
+
+        Father.prototype.money = function(){
+            console.log(10000);
+        }
+
+        function Son(uname,age,score){
+            // this指向子构造函数的对象实例
+            Father.call(this,uname,age);    //这里的this指向的是子构造函数
+            this.score = score;
+        }
+        var son = new Son('qq',15,100);
+        console.log(son);
+
+        
+    </script>
+</body>
+</html>
