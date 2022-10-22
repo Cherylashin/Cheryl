@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            pname: 'xiaomi',
+            price: 1999
+        };
+
+        // 新增
+        Object.defineProperty(obj,'num',{
+            value: 1000
+        });
+        console.log(obj);
+        // 修改
+        Object.defineProperty(obj,'price',{
+            value: 999
+        });
+        console.log(obj);
+
+        // 是否可以重写
+        Object.defineProperty(obj,'id',{
+            writable: false // id不允许被重写
+        });
+        console.log(obj);
+
+        obj.id = 2;
+        console.log(obj.id);    // 1
+
+        // 能否遍历
+        Object.defineProperty(obj,'address',{
+            value: '四川成都',
+            enumerable: false   //默认值false，不允许遍历
+        })
+        console.log(obj);
+        console.log(Object.keys(obj));
+
+        // 能否被删除
+        Object.defineProperty(obj,'address',{
+            value: '四川成都',
+            configurable: false // 为false，不允许删除
+        })
+        console.log(obj);
+        delete obj.address; // 不能被删除
+        delete obj.pname;   // 可以被删除
+        console.log(obj);
+    </script>
+</body>
+</html>
