@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <script>
+        var o = {
+            name: 'andy'
+        }
+        function fn(arr){
+            console.log(this);
+        }
+        // 返回的原函数改变this之后产生的新函数
+        var f = fn.bind(o); 
+        f();    // 调用新函数
+
+        // 如果有的函数我们不需要立即调用，
+        // 但是又想改变这个函数内部的this指向
+
+        // var btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     this.disabled = true;   // 这个this指向的是btn这个按钮
+        //     setTimeout(function(){  // 定时器函数里面的this 指向的是window
+        //         this.disabled = false;
+        //     }.bind(this),3000)  // 这个this指向的是btn这个对象
+        // }
+
+        // 多个按钮
+        var btns = document.querySelectorAll('button');
+        for(var i = 0;i < btns.length;i++){
+            btns[i].onclick = function(){
+                this.disabled = true;   // 点击之后2秒中不可再点
+                setTimeout(function(){
+                    this.disabled = false;                
+                }.bind(this),2000)
+            }
+        }
+
+    </script>
+</body>
+</html>

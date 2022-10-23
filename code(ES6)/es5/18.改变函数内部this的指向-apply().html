@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var o = {
+            name: 'andy'
+        }
+        function fn(arr){
+            console.log(this);
+            console.log(arr);   //打印出字符串pink
+        }
+        // 调用函数，改变this指向
+        // 传入参数必须是数组（伪数组）
+        fn.apply(o,['pink']);
+        // apply主要应用：可以利用apply借助数学内置对象求最值
+        var arr = [1,66,3,99,4];
+        var max = Math.max.apply(Math,arr);
+        console.log(max);   // 99
+    </script>
+</body>
+</html>
